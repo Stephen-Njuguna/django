@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to The Moringa Tribune</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            font-size: 18px;
+        }
+        .button {
+            background-color: #2980b9;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to The Moringa Tribune 📰</h1>
+    <h3>Today's date is {{ date|date:"j F Y" }}</h3>
+    <p>Your trusted source for news, stories, and insights that matter.</p>
+    <a href="/news" class="button">Enter News Portal</a>
+
+    {% block content %}
+    <!-- Child templates will inject content here -->
+    {% endblock %}
+</body>
+</html>

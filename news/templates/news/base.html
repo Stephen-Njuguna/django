@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load django_bootstrap5 %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Moringa Tribune</title>
+
+    <!-- Load your custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/baseNews.css' %}">
+
+    <!-- Load Bootstrap via django-bootstrap5 -->
+    {% bootstrap_css %}
+</head>
+<body>
+    <h1>Welcome to The Moringa Tribune 📰</h1>
+
+    {% block content %}
+    <!-- Child templates will inject content here -->
+    {% endblock %}
+
+    {% bootstrap_javascript %}
+</body>
+</html>

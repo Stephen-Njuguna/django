@@ -1,0 +1,31 @@
+{% extends 'news/welcome.html' %}
+
+{% block content %}
+    <div style="margin-top: 30px;">
+        {% if user_login %}
+            <p style="font-size: 18px; color: #2980b9;">
+                Welcome back,! Enjoy the latest news and features.
+            </p>
+        {% else %}
+            <a href="{% url 'todays_news' %}" class="button">Login</a>
+            <a href="Register" class="button">Register</a>
+            <p style="margin-top: 20px;">🔒 Please login or register to enjoy full access.</p>
+        {% endif %}
+    </div>
+
+    <style>
+        .button {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #3498db;
+        }
+    </style>
+{% endblock %}
