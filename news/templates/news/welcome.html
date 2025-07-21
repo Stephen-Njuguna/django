@@ -32,10 +32,10 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to The Moringa Tribune 📰</h1>
+    <h1>Welcome to The Tribune 📰</h1>
     <h3>Today's date is {{ date|date:"j F Y" }}</h3>
     <p>Your trusted source for news, stories, and insights that matter.</p>
-    <a href="/news" class="button">Enter News Portal</a>
+    <a href="{% url 'todays_news' %}" class="button">Enter News Portal</a>
 
     {% block content %}
     <!-- Child templates will inject content here -->

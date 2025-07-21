@@ -1,8 +1,8 @@
 {% extends 'news/base.html' %}
-
+{% load static %}
 {% block content %}
 {{block.super}}
-    <h2>
+    <div class="container">
         {% for news_item in news %}
             {{ news_item.title }}
             <p> {{news_item.pub_date}} </p>
@@ -14,6 +14,25 @@
         {% empty %}
             Here we go!!!
         {% endfor %}
-    </h2>
+
+        <div class="news-letter-form">
+            
+            <form method="post" enctype="multipart/form-data" id="newsletter-form">
+                <p class="letter-title"> subscribe to our news letters</p>
+                {% csrf_token %}
+                <div class="form-fiels">
+                    {{form.as_p}}
+                </div>
+                <div class="form-button">
+                    <button type="submit"> subscribe </button>
+                </div>
+            </form>
+            <div id="message-box">
+
+            </div>
+        </div>
+            {% block scripts %} <script src="{% static 'js/newsletter.js' %}"></script> {% endblock %}
+
+    </div>
     
 {% endblock %}

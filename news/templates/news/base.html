@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The Moringa Tribune</title>
+    <title>The Tribune</title>
 
     <!-- Load your custom CSS -->
     <link rel="stylesheet" href="{% static 'css/baseNews.css' %}">
@@ -13,8 +13,13 @@
     {% bootstrap_css %}
 </head>
 <body>
-    <h1>Welcome to The Moringa Tribune 📰</h1>
-
+    <h1>Welcome to The Tribune 📰</h1>
+    {% if user.is_authenticated %}
+  <p>Welcome back, {{ user.username }}!</p>
+  <a href="{% url 'logout'%}">Log Out</a>
+{% else %}
+  <a href="{% url 'login' %}">Login</a>
+{% endif %}
     {% block content %}
     <!-- Child templates will inject content here -->
     {% endblock %}
